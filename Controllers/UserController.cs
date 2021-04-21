@@ -13,7 +13,7 @@ using ApiUser.Exceptions;
 namespace ApiUser.Controllers
 {
 
-    [Route("api/users")]
+    [Route("Users")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -82,7 +82,7 @@ namespace ApiUser.Controllers
 
             UserReadDto userReadDto = _mapper.Map<UserReadDto>(userModelFromRepo);
 
-            _logger.LogInformation($"POST:{Request.Path} (nome={userModelFromRepo.Name};surname={userModelFromRepo.Surname};age={userModelFromRepo.Age}) - 201 Created at {DateTime.Now}");
+            _logger.LogInformation($"POST:{Request.Path} (id={userReadDto.Id};nome={userReadDto.Name};surname={userReadDto.Surname};age={userReadDto.Age}) - 201 Created at {DateTime.Now}");
 
             return CreatedAtRoute(nameof(getUserById), new { Id = userReadDto.Id }, userReadDto);
         }

@@ -67,6 +67,8 @@ namespace ApiUser
             {
                 endpoints.MapControllers();
             });
+
+            //CreateDB.PrepDB(app);
         }
     }
 }
