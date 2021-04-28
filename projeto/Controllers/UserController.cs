@@ -65,7 +65,7 @@ namespace ApiUser.Controllers
             if (userDto == null)
             {
                 _logger.LogWarning($"POST:{Request.Path} (nome={userDto.Name};surname={userDto.Surname};age={userDto.Age}) - 400 BadRequest at {DateTime.Now}");
-                return BadRequest(CustomErrors.BadRequest($"transaction not successful", Request));
+                return BadRequest(CustomErrors.BadRequest($"transaction not successful, check the request content", Request));
             }
 
             _userService.save(userModelFromRepo);
@@ -98,6 +98,10 @@ namespace ApiUser.Controllers
                 _logger.LogWarning($"PUT:{Request.Path} - 404 NotFound at {DateTime.Now}");
                 return NotFound(CustomErrors.NotFound($"Resource with id = {id}", Request));
             }
+            if(userDto == null){
+
+                return BadRequest(CustomErrors.BadRequest($"transaction not successful, check the request content", Request));
+            }
 
             _mapper.Map(userDto, userModelFromRepo);
 
@@ -124,8 +128,8 @@ namespace ApiUser.Controllers
             User userModelFromRepo = _userService.findById(id);
             if (userModelFromRepo == null)
             {
-                _logger.LogWarning($"DELETE:{Request.Path} - 404 NotFound at {DateTime.Now}");
-                return NotFound(CustomErrors.NotFound($"Resource with id = {id}", Request));
+                _logger.LogWarning($"DELETE:{Request.Path} - 400 BadRequest at {DateTime.Now}");
+                return BadRequest(CustomErrors.BadRequest($"Resource with id = {id}", Request));
             }
             _userService.delete(userModelFromRepo);
             try
