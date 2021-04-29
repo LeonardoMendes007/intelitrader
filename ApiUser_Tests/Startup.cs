@@ -73,18 +73,8 @@ namespace ApiUser
                 endpoints.MapControllers();
             });
 
-            var context = app.ApplicationServices.GetService<ApiUserContext>();
-            AdicionarDadosTeste(context);
-
-            //CreateDB.PrepDB(app);
+        
         }
 
-        private void AdicionarDadosTeste(ApiUserContext context)
-        {
-            context.Users.Add(new User(1, "Leonardo", "Mendes", 23, DateTime.Now));
-            context.Users.Add(new User(2, "Ivana", "Maria", 59, DateTime.Now));
-            context.Users.Add(new User(3, "Jéssica", "Mendes", 30, DateTime.Now));
-
-        }
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser.Tests\\ApiUser.Tests.csproj": {}
+    "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser.Tests\\ApiUser.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser.Tests\\ApiUser.Tests.csproj": {
+    "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser.Tests\\ApiUser.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser.Tests\\ApiUser.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser.Tests\\ApiUser.Tests.csproj",
         "projectName": "ApiUser.Tests",
-        "projectPath": "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser.Tests\\ApiUser.Tests.csproj",
-        "packagesPath": "C:\\Users\\mende\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser.Tests\\obj\\",
+        "projectPath": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser.Tests\\ApiUser.Tests.csproj",
+        "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mende\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser\\ApiUser.csproj": {
-                "projectPath": "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser\\ApiUser.csproj"
+              "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser\\ApiUser.csproj": {
+                "projectPath": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser\\ApiUser.csproj"
+              },
+              "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser_Tests\\ApiUser.csproj": {
+                "projectPath": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser_Tests\\ApiUser.csproj"
               }
             }
           }
@@ -88,17 +91,106 @@
         }
       }
     },
-    "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser\\ApiUser.csproj": {
+    "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser\\ApiUser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser\\ApiUser.csproj",
+        "projectUniqueName": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser\\ApiUser.csproj",
         "projectName": "ApiUser",
-        "projectPath": "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser\\ApiUser.csproj",
-        "packagesPath": "C:\\Users\\mende\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mende\\Documents\\leo\\dotnet\\intelitrader\\projeto-de-teste\\ApiUser\\obj\\",
+        "projectPath": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser\\ApiUser.csproj",
+        "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mende\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.JsonPatch": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser_Tests\\ApiUser.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser_Tests\\ApiUser.csproj",
+        "projectName": "ApiUser",
+        "projectPath": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser_Tests\\ApiUser.csproj",
+        "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Leonardo\\Documents\\leo\\dotnet\\intelitrader\\ApiUser_Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Leonardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

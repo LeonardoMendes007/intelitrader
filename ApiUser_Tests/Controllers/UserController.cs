@@ -20,7 +20,6 @@ namespace ApiUser.Controllers
 
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
 
         public UserController(IUserService userService, IMapper mapper)
         {

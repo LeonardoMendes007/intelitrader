@@ -1,4 +1,4 @@
-using System;
+    using System;
 using System.Linq;
 using ApiUser.Controllers;
 using ApiUser.Dtos;
@@ -28,7 +28,6 @@ namespace ApiUser.tests
         [Fact]
         public void putUser_WithId_1_ReturnsNotContent()
         {
-
             UserUpdateDto user = new UserUpdateDto("Leon", "Mend", 21);
             Assert.IsType<NoContentResult>(_userController.updateUser(1, user));
             var expectedUser = _userService.findById(1);
@@ -51,7 +50,7 @@ namespace ApiUser.tests
             UserUpdateDto user = null;
             Assert.IsType<BadRequestResult>(_userController.updateUser(1, user));
             var afterUser = _userService.findById(1);
-            Assert.Equal(beforeUser,afterUser);
+            Assert.Equal(beforeUser, afterUser);
         }
 
         [Fact]

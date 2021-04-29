@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApiUser\ApiUser.csproj" />
+    <ProjectReference Include="..\ApiUser_Tests\ApiUser.csproj" />
   </ItemGroup>
 
 </Project>
