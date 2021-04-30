@@ -19,7 +19,7 @@ namespace ApiUser.Services
             this._context = context;
 
         }
-        public IEnumerable<User> findAll()  
+        public List<User> findAll()  
         {
                 return _context.Users.ToList();
 

@@ -6,6 +6,13 @@ namespace ApiUser.Dtos
 
     public class UserUpdateDto
     {
+        public UserUpdateDto(string Name, string Surname, int Age)
+        {
+            this.Name = Name;
+            this.Surname = Surname;
+            this.Age = Age;
+        }
+
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }

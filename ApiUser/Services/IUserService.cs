@@ -6,7 +6,7 @@ namespace ApiUser.Services{
 
     public interface IUserService{
 
-        IEnumerable<User> findAll();
+        List<User> findAll();
         User findById(int id);
         void save(User user);
         void delete(User user);    

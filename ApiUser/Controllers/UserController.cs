@@ -30,13 +30,19 @@ namespace ApiUser.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<User>> getAllUsers()
+        public ActionResult<List<User>> getAllUsers()
         {
 
-            IEnumerable<User> users = _userService.findAll();
-            _logger.LogInformation($"GET:{Request.Path} - 200 OK at {DateTime.Now}");
+            List<User> users = _userService.findAll();
+            try
+            {
+                _logger.LogInformation($"GET:{Request.Path} - 200 OK at {DateTime.Now}");
+            }
+            catch
+            {
 
-            return Ok(_mapper.Map<IEnumerable<UserReadDto>>(users));
+            }
+            return Ok(_mapper.Map<List<UserReadDto>>(users));
 
         }
 
@@ -48,10 +54,12 @@ namespace ApiUser.Controllers
 
             if (user == null)
             {
-                _logger.LogWarning($"GET:{Request.Path} - 404 NotFound at {DateTime.Now}");
-                return NotFound(CustomErrors.NotFound($"There is no resource with id = {id}", Request));
+                try{_logger.LogWarning($"GET:{Request.Path} - 404 NotFound at {DateTime.Now}");}
+                catch { }
+                return NotFound();
             }
-            _logger.LogInformation($"GET:{Request.Path} - 200 OK at {DateTime.Now}");
+            try{_logger.LogInformation($"GET:{Request.Path} - 200 OK at {DateTime.Now}"); }
+            catch { }
             return Ok(_mapper.Map<UserReadDto>(user));
 
         }
@@ -62,10 +70,12 @@ namespace ApiUser.Controllers
 
             User userModelFromRepo = _mapper.Map<User>(userDto);
 
-            if (userDto == null)
+            if (userDto == null || userDto.Name == null || userDto.Age == 0)
             {
-                _logger.LogWarning($"POST:{Request.Path} (nome={userDto.Name};surname={userDto.Surname};age={userDto.Age}) - 400 BadRequest at {DateTime.Now}");
-                return BadRequest(CustomErrors.BadRequest($"transaction not successful, check the request content", Request));
+                try{_logger.LogWarning($"POST:{Request.Path} (nome={userDto.Name};surname={userDto.Surname};age={userDto.Age}) - 400 BadRequest at {DateTime.Now}");
+                     }
+                catch { }
+                    return BadRequest();
             }
 
             _userService.save(userModelFromRepo);
@@ -76,13 +86,21 @@ namespace ApiUser.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogWarning($"POST:{Request.Path} (nome={userModelFromRepo.Name};surname={userModelFromRepo.Surname};age={userModelFromRepo.Age}) - 500 Internal server error at {DateTime.Now}, message: {e.Message}");
-                return BadRequest(CustomErrors.InternalServerError($"A server error has occurred, if it persists, please try again later.", Request));
+                try
+                {
+                    _logger.LogWarning($"POST:{Request.Path} (nome={userModelFromRepo.Name};surname={userModelFromRepo.Surname};age={userModelFromRepo.Age}) - 500 Internal server error at {DateTime.Now}, message: {e.Message}");
+                }
+                catch { }
+                return BadRequest();
             }
 
             UserReadDto userReadDto = _mapper.Map<UserReadDto>(userModelFromRepo);
 
-            _logger.LogInformation($"POST:{Request.Path} (id={userReadDto.Id};nome={userReadDto.Name};surname={userReadDto.Surname};age={userReadDto.Age}) - 201 Created at {DateTime.Now}");
+            try
+            {
+                _logger.LogInformation($"POST:{Request.Path} (id={userReadDto.Id};nome={userReadDto.Name};surname={userReadDto.Surname};age={userReadDto.Age}) - 201 Created at {DateTime.Now}");
+            }
+            catch { }
 
             return CreatedAtRoute(nameof(getUserById), new { Id = userReadDto.Id }, userReadDto);
         }
@@ -95,12 +113,20 @@ namespace ApiUser.Controllers
 
             if (userModelFromRepo == null)
             {
-                _logger.LogWarning($"PUT:{Request.Path} - 404 NotFound at {DateTime.Now}");
-                return NotFound(CustomErrors.NotFound($"Resource with id = {id}", Request));
+                try
+                {
+                    _logger.LogWarning($"PUT:{Request.Path} - 404 NotFound at {DateTime.Now}");
+                }
+                catch { }
+                return NotFound();
             }
             if(userDto == null){
-
-                return BadRequest(CustomErrors.BadRequest($"transaction not successful, check the request content", Request));
+                try
+                {
+                    _logger.LogWarning($"PUT:{Request.Path} - 400 BadRequest at {DateTime.Now}");
+                }
+                catch { }
+                return BadRequest();
             }
 
             _mapper.Map(userDto, userModelFromRepo);
@@ -113,10 +139,18 @@ namespace ApiUser.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogWarning($"PUT:{Request.Path} - 500 Internal server error at {DateTime.Now}, message: {e.Message}");
-                return BadRequest(CustomErrors.InternalServerError($"A server error has occurred, if it persists, please try again later.", Request));
+                try
+                {
+                    _logger.LogWarning($"PUT:{Request.Path} - 500 Internal server error at {DateTime.Now}, message: {e.Message}");
+                }
+                catch { }
+                return BadRequest();
             }
-            _logger.LogInformation($"PUT:{Request.Path} (nome={userDto.Name};surname={userDto.Surname};age={userDto.Age}) - 200 OK at {DateTime.Now}");
+            try
+            {
+                _logger.LogInformation($"PUT:{Request.Path} (nome={userDto.Name};surname={userDto.Surname};age={userDto.Age}) - 200 OK at {DateTime.Now}");
+            }
+            catch { }
 
             return NoContent();
         }
@@ -128,8 +162,12 @@ namespace ApiUser.Controllers
             User userModelFromRepo = _userService.findById(id);
             if (userModelFromRepo == null)
             {
-                _logger.LogWarning($"DELETE:{Request.Path} - 400 BadRequest at {DateTime.Now}");
-                return BadRequest(CustomErrors.BadRequest($"Resource with id = {id}", Request));
+                try
+                {
+                    _logger.LogWarning($"DELETE:{Request.Path} - 400 BadRequest at {DateTime.Now}");
+                }
+                catch { }
+                return BadRequest();
             }
             _userService.delete(userModelFromRepo);
             try
@@ -138,11 +176,18 @@ namespace ApiUser.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogWarning($"PUT:{Request.Path} - 500 Internal server error at {DateTime.Now}, message: {e.Message}");
-                return BadRequest(CustomErrors.InternalServerError($"A server error has occurred, if it persists, please try again later.", Request));
+                try
+                {
+                    _logger.LogWarning($"PUT:{Request.Path} - 500 Internal server error at {DateTime.Now}, message: {e.Message}");
+                }
+                catch { }
+                return BadRequest();
             }
-
-            _logger.LogWarning($"DELETE:{Request.Path} - 204 NoContent at {DateTime.Now}");
+            try
+            {
+                _logger.LogWarning($"DELETE:{Request.Path} - 204 NoContent at {DateTime.Now}");
+            }
+            catch { }
 
             return NoContent();
 
