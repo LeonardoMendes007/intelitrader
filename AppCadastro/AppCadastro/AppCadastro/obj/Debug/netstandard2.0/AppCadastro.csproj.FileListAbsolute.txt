@@ -1,0 +1,16 @@
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\bin\Debug\netstandard2.0\AppCadastro.deps.json
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\bin\Debug\netstandard2.0\AppCadastro.dll
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\bin\Debug\netstandard2.0\ref\AppCadastro.dll
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\bin\Debug\netstandard2.0\AppCadastro.pdb
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\AppCadastro.csprojAssemblyReference.cache
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\AppCadastro.AssemblyInfoInputs.cache
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\AppCadastro.AssemblyInfo.cs
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\AppCadastro.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\AppCadastro.dll
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\ref\AppCadastro.dll
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\AppCadastro.pdb
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\Styles\MainPage.css.g.cs
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\Home.xaml.g.cs
+C:\Users\Leonardo\source\repos\AppCadastro\AppCadastro\AppCadastro\obj\Debug\netstandard2.0\Cadastro.xaml.g.cs

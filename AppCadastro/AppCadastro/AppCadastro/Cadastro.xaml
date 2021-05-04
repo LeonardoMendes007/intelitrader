@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppCadastro" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="AppCadastro.Cadastro">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Styles/MainPage.css"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="0" Padding="0" >
+            <Frame HeightRequest="45" BackgroundColor="#333333">
+                <Label x:Name="lbTitulo"   Text="Cadastrar" TextColor="#FEFCFF" FontSize="40" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Grid x:Name="gdPrincipal"  BackgroundColor="#333333" RowSpacing="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="5"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="8"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame  Grid.Row="0" Grid.Column="0" BackgroundColor="#9B51E0" HeightRequest="1" MinimumHeightRequest="0.1"></Frame>
+                <local:RoundedEntry  Grid.Row="2" Grid.Column="0" x:Name="etName" BackgroundColor="#F2F2F2" Placeholder="Name" PlaceholderColor="#9B51E0" Keyboard="Text" FontSize="25" HorizontalTextAlignment="Center" />
+
+                <Grid Grid.Row="3" Grid.Column="0" ColumnSpacing="10" BackgroundColor="#333333" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="70"/>
+                    </Grid.ColumnDefinitions>
+                    <local:RoundedEntry Grid.Row="0" Grid.Column="0" x:Name="etSurname" BackgroundColor="#F2F2F2" Placeholder="Surname" PlaceholderColor="#9B51E0"  Keyboard="Text" FontSize="25" HorizontalTextAlignment="Center" />
+                    <local:RoundedEntry Grid.Row="0" Grid.Column="1" x:Name="etAge" BackgroundColor="#F2F2F2" Placeholder="Age" PlaceholderColor="#9B51E0"   Keyboard="Numeric" FontSize="25"  HorizontalTextAlignment="Center"/>
+
+                </Grid>
+
+
+                <Button BorderWidth="2" BorderColor="Black" BorderRadius="15"  Grid.Row="4" Grid.Column="0" x:Name="btCadastrar" FontAttributes="Bold" Padding="15" Text="Cadastrar" BackgroundColor="#9B51E0" TextColor="White"  FontSize="25" HorizontalOptions="Center"/>
+                <Label x:Name="lbMessage" Grid.Row="5" Grid.Column="0" Text="" TextColor="#9B51E0" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="20"/>
+                <Frame  Grid.Row="6" Grid.Column="0" BackgroundColor="#9B51E0"></Frame>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

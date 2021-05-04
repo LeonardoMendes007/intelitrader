@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AppCadastro"
+             x:Class="AppCadastro.Home">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="/Styles/MainPage.css"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="0" Padding="0" >
+            <Grid BackgroundColor="#333333" x:Name="gdHeader">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="45"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" x:Name="lbTitulo" Text="Intelitrader" TextColor="#FEFCFF" FontSize="35" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Image x:Name="imgReload" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Source="recarregamento.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="img_reload"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <local:RoundedEntry x:Name="etBusca" BackgroundColor="#F2F2F2" Placeholder="search for user" PlaceholderColor="#9B51E0" Keyboard="Text" FontSize="25" HorizontalTextAlignment="Center" />
+
+            <ContentView BackgroundColor="#333333" Margin="20">
+                <ListView x:Name="lvUsers" HorizontalScrollBarVisibility="Never"  >
+
+                    <ListView.ItemTemplate>
+                     
+                    <DataTemplate >
+
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60*"/>
+                                    <ColumnDefinition Width="60*"/>
+                                    <ColumnDefinition Width="15*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="17" TextColor="White" Text="{Binding Name}"/>
+                                <Label Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="17" TextColor="White" Text="{Binding Surname}"/>
+                                <Label Grid.Column="2" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontSize="17" TextColor="White" Text="{Binding Age}"/>
+                            </Grid>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                 </ListView.ItemTemplate>
+              </ListView>
+            </ContentView>
+
+            <Button BorderWidth="2" BorderColor="Black" BorderRadius="15" x:Name="btCadastrar" FontAttributes="Bold" Padding="15" Text="Cadastrar" BackgroundColor="#9B51E0" TextColor="White"  FontSize="20" HorizontalOptions="Center"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
